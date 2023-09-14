@@ -1,45 +1,4 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-const diveSchema = new Schema({
-    user_id: {
-        type: String,
-        required: true
-    },
-    number: {
-        type: Number,
-        required: true
-    },
-    site: {
-        type: String,
-        required: true
-    },
-    depth: {
-        type: Number,
-        required: true
-    },
-    divetime: {
-        type: Number,
-        required: true
-    },
-    date: {
-        type: Date,
-        required: true
-    },
-    tags: {
-        type: Array,
-        required: false
-    },
-    trial: {
-        type: String,
-        required: false
-    },
-    deco: {
-        type: String,
-        required: false
-    }
-}, {timestamps: true})
-
-const Dive = mongoose.model('Dive', diveSchema)
+const Dive = require('../../../models/Dive');
 
 
 const getAll = (req, res) => {
