@@ -1,14 +1,17 @@
-let createError = require('http-errors');
-let express = require('express');
-let path = require('path');
-let cookieParser = require('cookie-parser');
-let logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
-let indexRouter = require('./routes/index');
-let usersRouter = require('./routes/users');
-let divesRouter = require('./routes/api/v1/dives.js');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const divesRouter = require('./routes/api/v1/dives.js');
 
-let app = express();
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27021/mantamo');
+
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
