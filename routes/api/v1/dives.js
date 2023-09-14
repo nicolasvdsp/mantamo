@@ -1,14 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const divesController = require('../../../controllers/api/v1/dives');
 
-router.get('/', (req, res) => {
-    res.json({
-        "status": "success",
-        "data": {
-            "id": "1",
-            "location": "Zeelandbrug"
-        }
-    });
-});
+router.get('/', divesController.getAll);
 
 module.exports = router;
